@@ -22,7 +22,7 @@ List<Map<String, dynamic>> contractsData = [
     "dataPublicacao": "2024-01-08",
     "situacaoCompra": "Publicado",
     "modalidadeLicitacao": "Pregão - Registro de Preço",
-    "instrumentoLegal": "Sem informação",
+    
     "valor": 0,
     "unidadeGestora": {
       "codigo": "150247",
@@ -43,7 +43,7 @@ List<Map<String, dynamic>> contractsData = [
     "dataPublicacao": "2023-12-19",
     "situacaoCompra": "Publicado",
     "modalidadeLicitacao": "Pregão - Registro de Preço",
-    "instrumentoLegal": "Sem informação",
+    
     "valor": 0,
     "unidadeGestora": {
       "codigo": "150247",
@@ -64,7 +64,7 @@ List<Map<String, dynamic>> contractsData = [
     "dataPublicacao": "2024-01-16",
     "situacaoCompra": "Publicado",
     "modalidadeLicitacao": "Pregão - Registro de Preço",
-    "instrumentoLegal": "Sem informação",
+    
     "valor": 0,
     "unidadeGestora": {
       "codigo": "150247",
@@ -85,7 +85,7 @@ List<Map<String, dynamic>> contractsData = [
     "dataPublicacao": "2024-01-10",
     "situacaoCompra": "Publicado",
     "modalidadeLicitacao": "Pregão",
-    "instrumentoLegal": "Sem informação",
+    
     "valor": 616380,
     "unidadeGestora": {
       "codigo": "153038",
@@ -106,7 +106,7 @@ List<Map<String, dynamic>> contractsData = [
     "dataPublicacao": "2024-01-09",
     "situacaoCompra": "Publicado",
     "modalidadeLicitacao": "Pregão - Registro de Preço",
-    "instrumentoLegal": "Sem informação",
+    
     "valor": 0,
     "unidadeGestora": {
       "codigo": "153038",
@@ -127,7 +127,7 @@ List<Map<String, dynamic>> contractsData = [
     "dataPublicacao": "2023-12-27",
     "situacaoCompra": "Evento de Alteração Publicado",
     "modalidadeLicitacao": "Pregão",
-    "instrumentoLegal": "Contrato",
+    
     "valor": 316800,
     "unidadeGestora": {
       "codigo": "150247",
@@ -148,7 +148,7 @@ List<Map<String, dynamic>> contractsData = [
     "dataPublicacao": "2024-01-18",
     "situacaoCompra": "Publicado",
     "modalidadeLicitacao": "Pregão - Registro de Preço",
-    "instrumentoLegal": "Sem informação",
+    
     "valor": 0,
     "unidadeGestora": {
       "codigo": "153038",
@@ -169,7 +169,7 @@ List<Map<String, dynamic>> contractsData = [
     "dataPublicacao": "2023-12-11",
     "situacaoCompra": "Publicado",
     "modalidadeLicitacao": "Pregão - Registro de Preço",
-    "instrumentoLegal": "Sem informação",
+    
     "valor": 0,
     "unidadeGestora": {
       "codigo": "150247",
@@ -190,7 +190,7 @@ List<Map<String, dynamic>> contractsData = [
     "dataPublicacao": "2023-12-22",
     "situacaoCompra": "Publicado",
     "modalidadeLicitacao": "Pregão - Registro de Preço",
-    "instrumentoLegal": "Sem informação",
+    
     "valor": 0,
     "unidadeGestora": {
       "codigo": "150247",
@@ -211,7 +211,7 @@ List<Map<String, dynamic>> contractsData = [
     "dataPublicacao": "2023-12-14",
     "situacaoCompra": "Evento de Adiamento Publicado",
     "modalidadeLicitacao": "Pregão - Registro de Preço",
-    "instrumentoLegal": "Sem informação",
+    
     "valor": 0,
     "unidadeGestora": {
       "codigo": "150247",
@@ -232,7 +232,7 @@ List<Map<String, dynamic>> contractsData = [
     "dataPublicacao": "2023-12-19",
     "situacaoCompra": "Publicado",
     "modalidadeLicitacao": "Pregão - Registro de Preço",
-    "instrumentoLegal": "Sem informação",
+    
     "valor": 0,
     "unidadeGestora": {
       "codigo": "150247",
@@ -253,7 +253,7 @@ List<Map<String, dynamic>> contractsData = [
     "dataPublicacao": "2024-01-22",
     "situacaoCompra": "Evento de Suspensão Publicado",
     "modalidadeLicitacao": "Pregão - Registro de Preço",
-    "instrumentoLegal": "Sem informação",
+    
     "valor": 0,
     "unidadeGestora": {
       "codigo": "153038",
@@ -274,7 +274,7 @@ List<Map<String, dynamic>> contractsData = [
     "dataPublicacao": "2023-12-19",
     "situacaoCompra": "Publicado",
     "modalidadeLicitacao": "Pregão - Registro de Preço",
-    "instrumentoLegal": "Sem informação",
+    
     "valor": 0,
     "unidadeGestora": {
       "codigo": "150247",
@@ -295,7 +295,7 @@ List<Map<String, dynamic>> contractsData = [
     "dataPublicacao": "2023-12-26",
     "situacaoCompra": "Publicado",
     "modalidadeLicitacao": "Pregão",
-    "instrumentoLegal": "Contrato",
+    
     "valor": 347027.21,
     "unidadeGestora": {
       "codigo": "153038",
@@ -316,7 +316,7 @@ List<Map<String, dynamic>> contractsData = [
     "dataPublicacao": "2024-01-17",
     "situacaoCompra": "Publicado",
     "modalidadeLicitacao": "Pregão",
-    "instrumentoLegal": "Sem informação",
+    
     "valor": 352152,
     "unidadeGestora": {
       "codigo": "153038",
@@ -337,7 +337,7 @@ List<Map<String, dynamic>> contractsData = [
     "dataPublicacao": "2024-02-07",
     "situacaoCompra": "Publicado",
     "modalidadeLicitacao": "Pregão - Registro de Preço",
-    "instrumentoLegal": "Sem informação",
+    
     "valor": 0,
     "unidadeGestora": {
       "codigo": "150247",
@@ -358,7 +358,7 @@ List<Map<String, dynamic>> contractsData = [
     "dataPublicacao": "2024-02-19",
     "situacaoCompra": "Publicado",
     "modalidadeLicitacao": "Pregão - Registro de Preço",
-    "instrumentoLegal": "Sem informação",
+    
     "valor": 0,
     "unidadeGestora": {
       "codigo": "150247",
@@ -379,7 +379,7 @@ List<Map<String, dynamic>> contractsData = [
     "dataPublicacao": "2024-01-25",
     "situacaoCompra": "Publicado",
     "modalidadeLicitacao": "Pregão - Registro de Preço",
-    "instrumentoLegal": "Sem informação",
+    
     "valor": 0,
     "unidadeGestora": {
       "codigo": "153038",
@@ -400,7 +400,7 @@ List<Map<String, dynamic>> contractsData = [
     "dataPublicacao": "2024-02-16",
     "situacaoCompra": "Publicado",
     "modalidadeLicitacao": "Pregão - Registro de Preço",
-    "instrumentoLegal": "Sem informação",
+    
     "valor": 0,
     "unidadeGestora": {
       "codigo": "153038",
@@ -421,7 +421,7 @@ List<Map<String, dynamic>> contractsData = [
     "dataPublicacao": "2024-01-25",
     "situacaoCompra": "Publicado",
     "modalidadeLicitacao": "Pregão - Registro de Preço",
-    "instrumentoLegal": "Sem informação",
+    
     "valor": 0,
     "unidadeGestora": {
       "codigo": "150247",
@@ -442,7 +442,7 @@ List<Map<String, dynamic>> contractsData = [
     "dataPublicacao": "2024-02-19",
     "situacaoCompra": "Publicado",
     "modalidadeLicitacao": "Pregão - Registro de Preço",
-    "instrumentoLegal": "Sem informação",
+    
     "valor": 0,
     "unidadeGestora": {
       "codigo": "150247",
@@ -463,7 +463,7 @@ List<Map<String, dynamic>> contractsData = [
     "dataPublicacao": "2024-01-31",
     "situacaoCompra": "Publicado",
     "modalidadeLicitacao": "Pregão - Registro de Preço",
-    "instrumentoLegal": "Sem informação",
+    
     "valor": 0,
     "unidadeGestora": {
       "codigo": "150247",
@@ -484,7 +484,7 @@ List<Map<String, dynamic>> contractsData = [
     "dataPublicacao": "2024-01-31",
     "situacaoCompra": "Publicado",
     "modalidadeLicitacao": "Pregão - Registro de Preço",
-    "instrumentoLegal": "Sem informação",
+    
     "valor": 0,
     "unidadeGestora": {
       "codigo": "150247",
@@ -505,7 +505,7 @@ List<Map<String, dynamic>> contractsData = [
     "dataPublicacao": "2024-01-31",
     "situacaoCompra": "Publicado",
     "modalidadeLicitacao": "Pregão - Registro de Preço",
-    "instrumentoLegal": "Sem informação",
+    
     "valor": 0,
     "unidadeGestora": {
       "codigo": "150247",
@@ -526,7 +526,7 @@ List<Map<String, dynamic>> contractsData = [
     "dataPublicacao": "2024-01-30",
     "situacaoCompra": "Publicado",
     "modalidadeLicitacao": "Pregão",
-    "instrumentoLegal": "Contrato",
+    
     "valor": 312720,
     "unidadeGestora": {
       "codigo": "150247",
@@ -547,7 +547,7 @@ List<Map<String, dynamic>> contractsData = [
     "dataPublicacao": "2024-01-25",
     "situacaoCompra": "Publicado",
     "modalidadeLicitacao": "Pregão - Registro de Preço",
-    "instrumentoLegal": "Sem informação",
+    
     "valor": 0,
     "unidadeGestora": {
       "codigo": "153038",
@@ -568,7 +568,7 @@ List<Map<String, dynamic>> contractsData = [
     "dataPublicacao": "2024-01-30",
     "situacaoCompra": "Publicado",
     "modalidadeLicitacao": "Pregão - Registro de Preço",
-    "instrumentoLegal": "Sem informação",
+    
     "valor": 0,
     "unidadeGestora": {
       "codigo": "150247",
@@ -589,7 +589,7 @@ List<Map<String, dynamic>> contractsData = [
     "dataPublicacao": "2024-03-06",
     "situacaoCompra": "Publicado",
     "modalidadeLicitacao": "Pregão - Registro de Preço",
-    "instrumentoLegal": "Sem informação",
+    
     "valor": 0,
     "unidadeGestora": {
       "codigo": "150247",
@@ -610,7 +610,7 @@ List<Map<String, dynamic>> contractsData = [
     "dataPublicacao": "2024-02-29",
     "situacaoCompra": "Publicado",
     "modalidadeLicitacao": "Pregão - Registro de Preço",
-    "instrumentoLegal": "Sem informação",
+    
     "valor": 0,
     "unidadeGestora": {
       "codigo": "150247",
@@ -631,7 +631,7 @@ List<Map<String, dynamic>> contractsData = [
     "dataPublicacao": "2024-03-06",
     "situacaoCompra": "Publicado",
     "modalidadeLicitacao": "Pregão - Registro de Preço",
-    "instrumentoLegal": "Sem informação",
+    
     "valor": 0,
     "unidadeGestora": {
       "codigo": "150247",
@@ -652,7 +652,7 @@ List<Map<String, dynamic>> contractsData = [
     "dataPublicacao": "2024-02-27",
     "situacaoCompra": "Publicado",
     "modalidadeLicitacao": "Pregão - Registro de Preço",
-    "instrumentoLegal": "Sem informação",
+    
     "valor": 0,
     "unidadeGestora": {
       "codigo": "150247",
@@ -673,7 +673,7 @@ List<Map<String, dynamic>> contractsData = [
     "dataPublicacao": "2024-03-07",
     "situacaoCompra": "Publicado",
     "modalidadeLicitacao": "Pregão - Registro de Preço",
-    "instrumentoLegal": "Sem informação",
+    
     "valor": 0,
     "unidadeGestora": {
       "codigo": "153038",
@@ -694,7 +694,7 @@ List<Map<String, dynamic>> contractsData = [
     "dataPublicacao": "2024-03-08",
     "situacaoCompra": "Publicado",
     "modalidadeLicitacao": "Pregão - Registro de Preço",
-    "instrumentoLegal": "Sem informação",
+    
     "valor": 0,
     "unidadeGestora": {
       "codigo": "150247",
@@ -715,7 +715,7 @@ List<Map<String, dynamic>> contractsData = [
     "dataPublicacao": "2024-03-08",
     "situacaoCompra": "Publicado",
     "modalidadeLicitacao": "Pregão",
-    "instrumentoLegal": "Sem informação",
+    
     "valor": 0,
     "unidadeGestora": {
       "codigo": "153038",
@@ -736,7 +736,7 @@ List<Map<String, dynamic>> contractsData = [
     "dataPublicacao": "2024-03-18",
     "situacaoCompra": "Publicado",
     "modalidadeLicitacao": "Pregão - Registro de Preço",
-    "instrumentoLegal": "Sem informação",
+    
     "valor": 0,
     "unidadeGestora": {
       "codigo": "150247",
@@ -757,7 +757,7 @@ List<Map<String, dynamic>> contractsData = [
     "dataPublicacao": "2024-02-23",
     "situacaoCompra": "Publicado",
     "modalidadeLicitacao": "Pregão - Registro de Preço",
-    "instrumentoLegal": "Sem informação",
+    
     "valor": 0,
     "unidadeGestora": {
       "codigo": "150247",
@@ -778,7 +778,7 @@ List<Map<String, dynamic>> contractsData = [
     "dataPublicacao": "2024-03-12",
     "situacaoCompra": "Evento de Alteração Publicado",
     "modalidadeLicitacao": "Pregão",
-    "instrumentoLegal": "Sem informação",
+    
     "valor": 0,
     "unidadeGestora": {
       "codigo": "153038",
@@ -799,7 +799,7 @@ List<Map<String, dynamic>> contractsData = [
     "dataPublicacao": "2024-02-20",
     "situacaoCompra": "Publicado",
     "modalidadeLicitacao": "Pregão",
-    "instrumentoLegal": "Sem informação",
+    
     "valor": 59160,
     "unidadeGestora": {
       "codigo": "153038",
@@ -820,7 +820,7 @@ List<Map<String, dynamic>> contractsData = [
     "dataPublicacao": "2024-02-28",
     "situacaoCompra": "Publicado",
     "modalidadeLicitacao": "Pregão - Registro de Preço",
-    "instrumentoLegal": "Sem informação",
+    
     "valor": 0,
     "unidadeGestora": {
       "codigo": "150247",
@@ -841,7 +841,7 @@ List<Map<String, dynamic>> contractsData = [
     "dataPublicacao": "2024-03-28",
     "situacaoCompra": "Publicado",
     "modalidadeLicitacao": "Pregão - Registro de Preço",
-    "instrumentoLegal": "Sem informação",
+    
     "valor": 0,
     "unidadeGestora": {
       "codigo": "150247",
@@ -862,7 +862,7 @@ List<Map<String, dynamic>> contractsData = [
     "dataPublicacao": "2024-03-27",
     "situacaoCompra": "Publicado",
     "modalidadeLicitacao": "Pregão - Registro de Preço",
-    "instrumentoLegal": "Sem informação",
+    
     "valor": 0,
     "unidadeGestora": {
       "codigo": "150247",
@@ -883,7 +883,7 @@ List<Map<String, dynamic>> contractsData = [
     "dataPublicacao": "2024-03-22",
     "situacaoCompra": "Publicado",
     "modalidadeLicitacao": "Pregão - Registro de Preço",
-    "instrumentoLegal": "Sem informação",
+    
     "valor": 0,
     "unidadeGestora": {
       "codigo": "150247",
@@ -904,7 +904,7 @@ List<Map<String, dynamic>> contractsData = [
     "dataPublicacao": "2024-03-20",
     "situacaoCompra": "Publicado",
     "modalidadeLicitacao": "Pregão - Registro de Preço",
-    "instrumentoLegal": "Sem informação",
+    
     "valor": 0,
     "unidadeGestora": {
       "codigo": "150247",
@@ -925,7 +925,7 @@ List<Map<String, dynamic>> contractsData = [
     "dataPublicacao": "2024-04-01",
     "situacaoCompra": "Publicado",
     "modalidadeLicitacao": "Pregão - Registro de Preço",
-    "instrumentoLegal": "Sem informação",
+    
     "valor": 0,
     "unidadeGestora": {
       "codigo": "150247",
@@ -946,7 +946,7 @@ List<Map<String, dynamic>> contractsData = [
     "dataPublicacao": "2024-03-21",
     "situacaoCompra": "Publicado",
     "modalidadeLicitacao": "Pregão - Registro de Preço",
-    "instrumentoLegal": "Sem informação",
+    
     "valor": 0,
     "unidadeGestora": {
       "codigo": "150247",
@@ -967,7 +967,7 @@ List<Map<String, dynamic>> contractsData = [
     "dataPublicacao": "2024-03-20",
     "situacaoCompra": "Publicado",
     "modalidadeLicitacao": "Pregão - Registro de Preço",
-    "instrumentoLegal": "Sem informação",
+    
     "valor": 0,
     "unidadeGestora": {
       "codigo": "150247",
@@ -988,7 +988,7 @@ List<Map<String, dynamic>> contractsData = [
     "dataPublicacao": "2024-03-20",
     "situacaoCompra": "Publicado",
     "modalidadeLicitacao": "Pregão - Registro de Preço",
-    "instrumentoLegal": "Sem informação",
+    
     "valor": 0,
     "unidadeGestora": {
       "codigo": "150247",
@@ -1009,7 +1009,7 @@ List<Map<String, dynamic>> contractsData = [
     "dataPublicacao": "2024-03-28",
     "situacaoCompra": "Publicado",
     "modalidadeLicitacao": "Pregão - Registro de Preço",
-    "instrumentoLegal": "Sem informação",
+    
     "valor": 0,
     "unidadeGestora": {
       "codigo": "150247",
@@ -1030,7 +1030,7 @@ List<Map<String, dynamic>> contractsData = [
     "dataPublicacao": "2024-03-25",
     "situacaoCompra": "Publicado",
     "modalidadeLicitacao": "Pregão - Registro de Preço",
-    "instrumentoLegal": "Sem informação",
+    
     "valor": 0,
     "unidadeGestora": {
       "codigo": "150247",
@@ -1051,7 +1051,7 @@ List<Map<String, dynamic>> contractsData = [
     "dataPublicacao": "2024-03-26",
     "situacaoCompra": "Publicado",
     "modalidadeLicitacao": "Pregão - Registro de Preço",
-    "instrumentoLegal": "Sem informação",
+    
     "valor": 0,
     "unidadeGestora": {
       "codigo": "150247",
@@ -1072,7 +1072,7 @@ List<Map<String, dynamic>> contractsData = [
     "dataPublicacao": "2024-03-27",
     "situacaoCompra": "Evento de Adiamento Publicado",
     "modalidadeLicitacao": "Pregão - Registro de Preço",
-    "instrumentoLegal": "Sem informação",
+    
     "valor": 0,
     "unidadeGestora": {
       "codigo": "153038",

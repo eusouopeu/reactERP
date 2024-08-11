@@ -3,6 +3,7 @@ import './App.css'
 import SummaryCards from './components/SummaryCards'
 import ChartCard from './components/ChartCard'
 import CustomLineChart from './components/CustomLineChart'
+import EnhancedTable from './components/StaffDataTable'
 
 
 function App() {
@@ -21,7 +22,9 @@ function App() {
           <SummaryCards title='GAO' value='0,6'/>
           <SummaryCards title='GAF' value='0,8'/>
         </section>
+  <EnhancedTable/>
 <ChartCard title='Line Chart'>
+
 
         <CustomLineChart/>
 </ChartCard>
