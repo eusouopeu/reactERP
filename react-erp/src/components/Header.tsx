@@ -1,7 +1,7 @@
 import React from 'react'
 
 import ufbalogo from '../assets/ufbalogo.png'
-import { MagnifyingGlassIcon } from '@heroicons/react/24/outline'
+import { MagnifyingGlassIcon } from '@heroicons/react/20/solid'
 
 
 interface HeaderProps {

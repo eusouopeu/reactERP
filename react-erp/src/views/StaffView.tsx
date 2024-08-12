@@ -2,7 +2,7 @@ import React from 'react'
 import SummaryCards from '../components/SummaryCards'
 import { mediaSalProfs, mediaSalTAs, sumsIncome } from '../utils/StaffComparisons'
 import { formatNumber } from 'chart.js/helpers'
-import StaffDataTable from '../components/StaffDataTable'
+import { StaffDataTable } from '../components/tables/StaffDataTable'
 
 export default function StaffView() {
   return (

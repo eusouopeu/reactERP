@@ -1,4 +1,4 @@
-import { TransactionModelHeader } from "../models/TransactionModel";
+import { TransactionModelHeader } from "../services/models/TransactionModel";
 
 //= Header
 export const transactionsHeader: readonly TransactionModelHeader[] = [

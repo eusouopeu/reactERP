@@ -7,7 +7,7 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: 'Comfortaa';
+  font-family: 'Nunito', sans-serif;
 }
 
 :root {
@@ -23,7 +23,7 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url("./assets/bg-gradient-2.jpg");
+  background-image: url("./assets/Gradient.png");
   /* @apply bg-gradient-to-b from-sky-200 via-emerald-400 to-blue-500; */
   
 }

@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { Tabs, Tab } from '@mui/material'
 import DashboardView from './views/DashboardView'
 import StaffView from './views/StaffView'
-import { BookOpenIcon, CurrencyDollarIcon, HomeIcon, UsersIcon } from '@heroicons/react/24/outline'
+import { BookOpenIcon, CurrencyDollarIcon, HomeIcon, UsersIcon } from '@heroicons/react/20/solid'
 import TransactionsView from './views/TransactionsView'
 import ContractsView from './views/ContractsView'
 

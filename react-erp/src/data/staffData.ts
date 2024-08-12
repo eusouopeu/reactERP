@@ -1,4 +1,4 @@
-import { StaffModelHeader } from '../models/StaffModel';
+import { StaffModelHeader } from '../services/models/StaffModel';
 
 export const staffHeader: readonly StaffModelHeader[] = [
   {
