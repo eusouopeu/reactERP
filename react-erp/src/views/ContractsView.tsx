@@ -1,6 +1,6 @@
 import React from 'react'
-import ContractsList from '../components/ContractsList'
-import DRE from '../components/DRE'
+import ContractsList from '../components/lists/ContractsList'
+import DRE from '../components/lists/DRE'
 
 
 export default function ContractsView() {

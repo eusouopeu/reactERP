@@ -3,6 +3,7 @@ import React from "react";
 import { getServidoresComRemuneracao } from "../../services/api/FetchStaff";
 import { FilteredStaffModel } from "../../services/models/StaffModel";
 import { Order, stableSort, getComparator } from "../../services/utils/DataTableFunctions";
+import StaffTableHead from "./EnhancedTableHead";
 
 export function StaffDataTable() {
   const [order, setOrder] = React.useState<Order>('asc');
@@ -53,7 +54,7 @@ export function StaffDataTable() {
             aria-labelledby="tableTitle"
             className='bg-transparent'
           >
-            <EnhancedTableHead
+            <StaffTableHead
               order={order}
               orderBy={orderBy}
               onRequestSort={handleRequestSort}
@@ -76,7 +77,7 @@ export function StaffDataTable() {
                     >
                       {row.id}
                     </TableCell>
-                    <TableCell align="left" padding='normal' className='w-[320px]'>{row.nome}</TableCell>
+                    <TableCell align="left" padding='normal' className='w-[320px]'>{row.admissao}</TableCell>
                     <TableCell align="left" padding='normal' className='w-[220px]'>{row.cargo}</TableCell>
                     <TableCell align="left" padding='normal' className='w-[220px]'>{row.unidade}</TableCell>
                     <TableCell align="left" className='w-[110px]'>{row.admissao}</TableCell>

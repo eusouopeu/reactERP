@@ -1,6 +1,6 @@
 import React from 'react'
 import SummaryCards from '../components/SummaryCards'
-import { mediaSalProfs, mediaSalTAs, sumsIncome } from '../utils/StaffComparisons'
+import { mediaSalProfs, mediaSalTAs, sumsIncome } from '../services/utils/StaffComparisons'
 import { formatNumber } from 'chart.js/helpers'
 import { StaffDataTable } from '../components/tables/StaffDataTable'
 

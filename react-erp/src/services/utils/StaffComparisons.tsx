@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 // Importando os dados da equipe
-import { staffData } from '../data/staffData';
+import { staffData } from '../../data/staffData';
 
 // Função para converter a string de remuneração para número, considerando possíveis formatos
 function parseRemuneracao(remuneracaoStr: string): number {

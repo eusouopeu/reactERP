@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 // Importando os dados da equipe
-import { transactionsData } from '../data/transactionsData';
+import { transactionsData } from '../../data/transactionsData';
 
 // Função para calcular o total gasto
 const calculateTotalGasto = (transactionsData: Array<{ valorNotaFiscal: string }>): number => {

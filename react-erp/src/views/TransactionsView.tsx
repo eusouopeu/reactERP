@@ -1,7 +1,7 @@
 import React from 'react'
-import TransactionsDataTable from '../components/TransactionsDataTable'
+import TransactionsDataTable from '../components/tables/TransactionsDataTable'
 import SummaryCards from '../components/SummaryCards'
-import { maiorGasto, mediaGastos, totalGastos, municipioModa } from '../utils/TransactionsComparison'
+import { maiorGasto, mediaGastos, totalGastos, municipioModa } from '../services/utils/TransactionsComparison'
 import { formatNumber } from 'chart.js/helpers'
 
 export default function TransactionsView() {
