@@ -1,22 +1,20 @@
 import React from 'react';
-import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import { AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
 
-const data = [
-  { name: 'Jan', value: 400 },
-  { name: 'Feb', value: 300 },
-  { name: 'Mar', value: 200 },
-  { name: 'Apr', value: 278 },
-  { name: 'May', value: 189 },
-  { name: 'Jun', value: 239 },
-  { name: 'Jul', value: 349 },
-  { name: 'Aug', value: 200 },
+const grad = [
+  { name: '2006', value: 22665 },
+  { name: '2008', value: 24367 },
+  { name: '2010', value: 28562 },
+  { name: '2012', value: 32241 },
+  { name: '2014', value: 33767 },
+  { name: '2015', value: 33798 },
 ];
 
 const MyLineChart = () => {
   return (
-    <ResponsiveContainer width="100%" height={400}>
+    <ResponsiveContainer width="100%" height={280}>
       <AreaChart
-        data={data}
+        data={grad}
         margin={{ top: 10, right: 30, left: 0, bottom: 0 }}
       >
         <defs>
@@ -27,7 +25,6 @@ const MyLineChart = () => {
         </defs>
         <XAxis dataKey="name" />
         <YAxis />
-        <CartesianGrid strokeDasharray="3 3" />
         <Tooltip />
         <Area type="monotone" dataKey="value" stroke="#1994ff" fillOpacity={1} fill="url(#colorValue)" />
       </AreaChart>

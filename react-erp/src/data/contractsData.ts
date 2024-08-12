@@ -1,4 +1,4 @@
-const contractsHeader = [
+export const contractsHeader = [
   'ID',
   'Data de Publicação',
   'Modalidade',
@@ -7,7 +7,7 @@ const contractsHeader = [
   'Descrição',
 ];
 
-List<Map<String, dynamic>> contractsData = [
+export const contractsData = [
   {
     "id": 908468452,
     "licitacao": {

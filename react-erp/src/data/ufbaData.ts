@@ -1,11 +1,11 @@
-const ufbaData = {
+export const ufbaData = {
   'Matriculas': {
-    "Graduação": {
+    "Graduacao": {
       "Salvador": {
         "Diurno": 30410,
         "Noturno": 14507,
       },
-      "Vitória da Conquista": {
+      "VitoriaDaConquista": {
         "Diurno": 1572,
         "Noturno": 0,
       },
@@ -17,12 +17,12 @@ const ufbaData = {
     },
   },
   'Cursos': {
-    "Graduação": {
+    "Graduacao": {
       'Salvador': {
         "Diurno": 63,
         "Noturno": 31,
       },
-      'Vitória da Conquista': {
+      'VitoriaDaConquista': {
         "Diurno": 7,
         "Noturno": 0,
       },
@@ -39,7 +39,7 @@ const ufbaData = {
     "Serviços": {
       "Residência Estudantil": 302,
       "Ações do NAPE": 77,
-      "Restaurante Universitário": 468.690,
+      "Restaurante Universitário": 468690,
     },
     "Auxilios": {
       "Permanência": 532,
@@ -51,7 +51,7 @@ const ufbaData = {
       "Material Didático": 68,
       "Acolhimento": 7,
       "Necessidades Especiais": 1.000,
-      "Outros": 1.075,
+      "Outros": 1075,
     },
   },
   "Extensao": {
@@ -142,7 +142,7 @@ const ufbaData = {
   },
 };
 
-var bolsasUfba = {
+export const bolsasUfba = {
   "Graduacao": {
     "Programa de Educação Tutorial (PET)": 254,
     "Monitoria": 460,

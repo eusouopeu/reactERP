@@ -1,4 +1,4 @@
-Map<String, dynamic> ufbaFinPlan = {
+export const ufbaDREData = {
   "Recursos do Tesouro": {
     'Programa de gestão e manutenção do Poder Executivo/Operações especiais': {
       'Previdência de inativos e pensionistas – Servidores civis': 645951872.49,
@@ -9,10 +9,9 @@ Map<String, dynamic> ufbaFinPlan = {
       },
       'Participação em organismos e entidades nacionais e internacionais':
           139422.58,
-      'Programa de gestão e manutenção do MEC': {
-        'Pessoal, benefícios, capacitação de servidores, custeio do PSS e auxíliomoradia':
+      'Pessoal, benefícios, capacitação de servidores, custeio do PSS e auxílio-moradia':
             1000978473.99,
-      },
+      
     },
     'Educação superior': {
       'Assistência ao estudante de ensino superior': 37037933.42,

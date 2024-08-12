@@ -11,28 +11,28 @@ import TableSortLabel from '@mui/material/TableSortLabel';
 import Paper from '@mui/material/Paper';
 import { visuallyHidden } from '@mui/utils';
 import { stableSort, getComparator, Order } from '../utils/DataTableFunctions';
-import { staffData, staffHeader } from '../data/staffData.ts';
-import { FilteredStaffModel, RawStaffModel } from '../models/StaffModel.tsx';
+import { transactionsData, transactionsHeader } from '../data/transactionsData.ts';
+import { FilteredTransactionModel, RawTransactionModel } from '../models/TransactionModel.ts';
 import { formatNumber } from 'chart.js/helpers';
 import { fetchData } from '../services/api.ts';
 
 
-const filterStaffData1 = (data: RawStaffModel[]): FilteredStaffModel[] => {
-  return data.map((staff) => ({
-    id: staff.id,
-    nome: staff.nome,
-    unidade: staff.uorgExercicio,
-    cargo: staff.cargo,
-    admissao: staff.dataIngressoCargo ? staff.dataIngressoCargo: 'Não informado',
-    salario: parseFloat(staff.remuneracaoBasicaBruta.replace('.', '').replace(',', '.')),
+const filterTransactionData1 = (data: RawTransactionModel[]): FilteredTransactionModel[] => {
+  return data.map((transaction) => ({
+    id: transaction.id,
+    data: transaction.dataEmissao ? transaction.dataEmissao: 'Não informado',
+    fornecedor: transaction.nomeFornecedor,
+    cnpj: transaction.cnpjFornecedor,
+    municipio: transaction.municipioFornecedor,
+    valor: parseFloat(transaction.valorNotaFiscal.replace('.', '').replace(',', '.')),
   }));
 };
 
-const rows = filterStaffData1(staffData);
+const rows = filterTransactionData1(transactionsData);
 
 
 interface EnhancedTableProps {
-  onRequestSort: (event: React.MouseEvent<unknown>, property: keyof FilteredStaffModel) => void;
+  onRequestSort: (event: React.MouseEvent<unknown>, property: keyof FilteredTransactionModel) => void;
   order: Order;
   orderBy: string;
 }
@@ -41,7 +41,7 @@ function EnhancedTableHead(props: EnhancedTableProps) {
   const { order, orderBy, onRequestSort } =
     props;
   const createSortHandler =
-    (property: keyof FilteredStaffModel) => (event: React.MouseEvent<unknown>) => {
+    (property: keyof FilteredTransactionModel) => (event: React.MouseEvent<unknown>) => {
       onRequestSort(event, property);
     };
 
@@ -49,7 +49,7 @@ function EnhancedTableHead(props: EnhancedTableProps) {
     <TableHead className='bg-gradient-to-b from-blue-300 to-blue-500'>
       <TableRow>
         
-        {staffHeader.map((headCell) => (
+        {transactionsHeader.map((headCell) => (
           <TableCell
             key={headCell.id}
             align={'left'}
@@ -78,11 +78,11 @@ function EnhancedTableHead(props: EnhancedTableProps) {
 
 
 
-export default function StaffDataTable() {
+export default function TransactionDataTable() {
   const [order, setOrder] = React.useState<Order>('asc');
-  const [orderBy, setOrderBy] = React.useState<keyof FilteredStaffModel>('id');
+  const [orderBy, setOrderBy] = React.useState<keyof FilteredTransactionModel>('id');
   const [page, setPage] = React.useState(0);
-  const [rowsPerPage, setRowsPerPage] = React.useState(4);
+  const [rowsPerPage, setRowsPerPage] = React.useState(5);
 
   React.useEffect(() => {
     fetchData();
@@ -90,7 +90,7 @@ export default function StaffDataTable() {
 
   const handleRequestSort = (
     event: React.MouseEvent<unknown>,
-    property: keyof FilteredStaffModel,
+    property: keyof FilteredTransactionModel,
   ) => {
     const isAsc = orderBy === property && order === 'asc';
     setOrder(isAsc ? 'desc' : 'asc');
@@ -140,7 +140,7 @@ export default function StaffDataTable() {
                     <TableRow
                       role="checkbox"
                       tabIndex={-1}
-                      key={row.nome}
+                      key={row.fornecedor}
                       className='bg-transparent odd:bg-slate-100/40 hover:bg-blue-200'
                     >
                       
@@ -152,11 +152,11 @@ export default function StaffDataTable() {
                       >
                         {row.id}
                       </TableCell>
-                      <TableCell align="left" padding='normal' className='w-[320px]'>{row.nome}</TableCell>
-                      <TableCell align="left" padding='normal' className='w-[220px]'>{row.cargo}</TableCell>
-                      <TableCell align="left" padding='normal' className='w-[220px]'>{row.unidade}</TableCell>
-                      <TableCell align="left" className='w-[110px]'>{row.admissao}</TableCell>
-                      <TableCell align="left" padding='normal' className='w-[160px]'>R$ {formatNumber(row.salario, "pt-BR")}</TableCell>
+                      <TableCell align="left" padding='normal' className='w-[120px]'>{row.data}</TableCell>
+                      <TableCell align="left" padding='normal' className='w-[420px]'>{row.fornecedor}</TableCell>
+                      <TableCell align="left" padding='normal' className='w-[170px]'>{row.cnpj}</TableCell>
+                      <TableCell align="left" className='w-[160px]'>{row.municipio}</TableCell>
+                      <TableCell align="left" padding='normal' className='w-[160px]'>R$ {formatNumber(row.valor, "pt-BR")}</TableCell>
                     </TableRow>
                   );
                 })}
@@ -173,13 +173,14 @@ export default function StaffDataTable() {
           </Table>
         </TableContainer>
         <TablePagination
-          rowsPerPageOptions={[4]}
+          rowsPerPageOptions={[5]}
           component="div"
           count={rows.length}
-          rowsPerPage={rowsPerPage}
+          rowsPerPage={5}
           page={page}
           onPageChange={handleChangePage}
           onRowsPerPageChange={handleChangeRowsPerPage}
+          className='bg-white/50'
         />
       </Paper>
     </Box>
