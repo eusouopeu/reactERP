@@ -34,4 +34,3 @@ export function stableSort<T>(array: T[] | undefined, comparator: (a: T, b: T) =
   });
   return stabilizedThis.map((el) => el[0]);
 }
-

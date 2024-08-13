@@ -1,5 +1,7 @@
+import { NotaFiscal } from "../api/FetchReceipts";
+
 export interface TransactionModelHeader {
-  id: keyof FilteredTransactionModel
+  id: keyof NotaFiscal
   numeric: boolean
   disablePadding: boolean
   label: string

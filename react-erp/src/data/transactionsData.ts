@@ -9,28 +9,22 @@ export const transactionsHeader: readonly TransactionModelHeader[] = [
     label: 'ID',
   },
   {
-    id: 'data',
+    id: 'nomeFornecedor',
     numeric: true,
     disablePadding: false,
-    label: 'Data',
-  },
-  {
-    id: 'fornecedor',
-    numeric: false,
-    disablePadding: true,
     label: 'Fornecedor',
   },
   {
-    id: 'cnpj',
+    id: 'cnpjFornecedor',
     numeric: false,
     disablePadding: true,
-    label: 'CNPJ',
+    label: 'cnpj',
   },
   {
-    id: 'municipio',
+    id: 'dataEmissao',
     numeric: false,
     disablePadding: true,
-    label: 'Município',
+    label: 'data',
   },
   {
     id: 'valor',

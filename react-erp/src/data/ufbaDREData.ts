@@ -35,6 +35,6 @@ export const ufbaDREData = {
     },
   },
   'Recursos próprios': 14766469.65,
-  'Recursos de convênios/descentralizações': 43332151.37,
+  'Recursos de convênios /descentralizações': 43332151.37,
   'Recursos FNS/SUS': 158521673.98,
 };

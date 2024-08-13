@@ -1,7 +1,7 @@
 import React from 'react'
 import { formatNumber } from 'chart.js/helpers'
-import SummaryCards from '../components/SummaryCards'
-import { ufbaData } from '../data/ufbaData';
+import SummaryCards from '../../components/SummaryCards'
+import { ufbaData } from '../../data/ufbaData';
 
 export default function DashSummaryContainer() {
   const gradCursos =  ufbaData.Cursos.Graduacao.EAD + ufbaData.Cursos.Graduacao.Salvador.Diurno + ufbaData.Cursos.Graduacao.Salvador.Noturno + ufbaData.Cursos.Graduacao.VitoriaDaConquista.Diurno + ufbaData.Cursos.Graduacao.VitoriaDaConquista.Noturno + ufbaData.Cursos.Graduacao.Camaçari.Diurno + ufbaData.Cursos.Graduacao.Camaçari.Noturno;
@@ -10,7 +10,7 @@ export default function DashSummaryContainer() {
   const extensao = ufbaData.Extensao.Programas + ufbaData.Extensao.Projetos + ufbaData.Extensao['Cursos e minicursos'] + ufbaData.Extensao['ACCS'] + ufbaData.Extensao.Outros + ufbaData.Extensao['Prestação de serviços'];
 
   return (
-    <section className='flex flex-col md:flex-row flex-wrap md:justify-between w-full gap-[20px]'>
+    <section className='summary-container'>
       <SummaryCards title='Receita' value='R$ 2.007.885.471,13' />
       <SummaryCards title='Graduação' value={formatNumber(gradCursos, 'pt-BR')} />
       <SummaryCards title='Pós-Graduação' value={formatNumber(postGradCursos, 'pt-BR')} />

@@ -1,5 +1,6 @@
 import React from 'react';
-import { PieChart, Pie, Cell, Tooltip, Legend } from 'recharts';
+import { PieChart } from '@mui/x-charts/PieChart';
+import ChartCard from '../../ChartCard';
 
 const bolsasGraduacao = {
   "Programa de Educação Tutorial (PET)": 254,
@@ -13,42 +14,47 @@ const bolsasGraduacao = {
 };
 
 const BolsasPieChart = () => {
-  // Convert the bolsas data to an array suitable for PieChart
   const data = Object.entries(bolsasGraduacao).map(([name, value]) => ({
-    name: name || 'Sem nome', // Handle empty names
     value,
+    name: name || 'Sem nome', // Handle empty names
   }));
 
   // Define colors for the pie chart segments
   const colors = ['#FF6384', '#36A2EB', '#FFCE56', '#FF5733', '#C70039', '#900C3F', '#581845', '#DAa706'];
 
   return (
-        <PieChart width={500} height={400} className='self-center *:font-bold'>
-          <Pie
-            data={data}
-            dataKey="value"
-            nameKey="name"
-            cx="50%"
-            cy="50%"
-            innerRadius={70}
-            outerRadius={100}
-            fill="#8884d8"
-            label
-          >
-            {data.map((entry, index) => (
-              <Cell key={`cell-${index}`} fill={colors[index % colors.length]} />
-            ))}
-          </Pie>
-          <Tooltip />
-          <Legend
-            layout="vertical"
-            align="left"
-            verticalAlign="middle"
-            
-            wrapperStyle={{ width: '30%', height: '100%', overflow: 'auto' }}
-            
-          />
-        </PieChart>
+    <ChartCard title='Bolsas de Graduação' className=' md:w-[530px] max-h-[390px]'>
+
+      <PieChart
+        width={400}
+        height={300}
+        margin={{ right:100 }}
+        colors={colors}
+        series={[
+          {
+            data: data,
+            innerRadius: 48,
+            outerRadius: 100,
+            paddingAngle: 4,
+            cornerRadius: 8,
+            startAngle: -90,
+            endAngle: 180,
+            cx: 150,
+            cy: 150,
+            highlightScope: { faded: 'global', highlighted: 'item' },
+            faded: { innerRadius: 30, additionalRadius: -20, color: 'green' },
+          }
+        ]}
+        slotProps={{
+          legend: {
+            direction: 'column',
+            position: { vertical: 'middle', horizontal: 'right' },
+            padding: 0,
+          },
+        }}
+        />
+
+    </ChartCard>
   );
 };
 

@@ -1,21 +1,15 @@
 import React from 'react'
 import ContractsList from '../components/lists/ContractsList'
-import DRE from '../components/lists/DRE'
+import DREList from '../components/lists/DREList'
 
 
 export default function ContractsView() {
   return (
-    <section className='flex w-full md:w-[calc(100vw-540px)] h-fit pb-[60px]'>
+    <section className='views'>
 
-      <div className='flex flex-col'>
-        <ContractsList/>
-      </div>
-
-      <div>
-        <DRE />
-      </div>
-
+      <ContractsList/>
       
+      <DREList />
       
     </section>
   )

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Table from '@mui/material/Table';
@@ -8,31 +9,18 @@ import TableHead from '@mui/material/TableHead';
 import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
 import TableSortLabel from '@mui/material/TableSortLabel';
-import Paper from '@mui/material/Paper';
 import { visuallyHidden } from '@mui/utils';
 import { stableSort, getComparator, Order } from '../../services/utils/DataTableFunctions';
-import { transactionsData, transactionsHeader } from '../../data/transactionsData.ts';
-import { FilteredTransactionModel, RawTransactionModel } from '../../services/models/TransactionModel.ts';
-import { formatNumber } from 'chart.js/helpers';
-import { fetchServidores } from '../../services/api/FetchStaff.ts';
+import { transactionsHeader } from '../../data/transactionsData.ts';
+import { NumericFormat } from 'react-number-format';
+import { Divider, ListItemText } from '@mui/material';
+import { fetchNotasFiscais, NotaFiscal } from '../../services/api/FetchReceipts.ts';
 
 
-const filterTransactionData1 = (data: RawTransactionModel[]): FilteredTransactionModel[] => {
-  return data.map((transaction) => ({
-    id: transaction.id,
-    data: transaction.dataEmissao ? transaction.dataEmissao: 'Não informado',
-    fornecedor: transaction.nomeFornecedor,
-    cnpj: transaction.cnpjFornecedor,
-    municipio: transaction.municipioFornecedor,
-    valor: parseFloat(transaction.valorNotaFiscal.replace('.', '').replace(',', '.')),
-  }));
-};
-
-const rows = filterTransactionData1(transactionsData);
 
 
 interface EnhancedTableProps {
-  onRequestSort: (event: React.MouseEvent<unknown>, property: keyof FilteredTransactionModel) => void;
+  onRequestSort: (event: React.MouseEvent<unknown>, property: keyof NotaFiscal) => void;
   order: Order;
   orderBy: string;
 }
@@ -41,13 +29,13 @@ function EnhancedTableHead(props: EnhancedTableProps) {
   const { order, orderBy, onRequestSort } =
     props;
   const createSortHandler =
-    (property: keyof FilteredTransactionModel) => (event: React.MouseEvent<unknown>) => {
+    (property: keyof NotaFiscal) => (event: React.MouseEvent<unknown>) => {
       onRequestSort(event, property);
     };
 
   return (
-    <TableHead className='bg-gradient-to-b from-blue-300 to-blue-500'>
-      <TableRow>
+    <TableHead className='w-fit'>
+      <TableRow sx={{ position: 'fixed', top: 40, display: 'flex', gap: 2 }}>
         
         {transactionsHeader.map((headCell) => (
           <TableCell
@@ -55,6 +43,8 @@ function EnhancedTableHead(props: EnhancedTableProps) {
             align={'left'}
             padding={headCell.disablePadding ? 'none' : 'normal'}
             sortDirection={orderBy === headCell.id ? order : false}
+            sx={{ paddingX: 2, border: 'none', fontSize: 18, fontWeight: 800, color: 'white' }}
+            className='flex content-center w-full bg-gradient-to-b from-emerald-400 to-emerald-600 rounded-full shadow-lg'
             >
             <TableSortLabel
               active={orderBy === headCell.id}
@@ -80,17 +70,24 @@ function EnhancedTableHead(props: EnhancedTableProps) {
 
 export default function TransactionDataTable() {
   const [order, setOrder] = React.useState<Order>('asc');
-  const [orderBy, setOrderBy] = React.useState<keyof FilteredTransactionModel>('id');
+  const [orderBy, setOrderBy] = React.useState<keyof NotaFiscal>('id');
   const [page, setPage] = React.useState(0);
-  const [rowsPerPage, setRowsPerPage] = React.useState(5);
+  const [rowsPerPage, setRowsPerPage] = React.useState(4);
+  const [rows, setRows] = React.useState<any[]>([]);
 
   React.useEffect(() => {
-    fetchServidores();
+    fetchNotasFiscais()
+    .then(notas => {
+      setRows(notas)
+    })
+    .catch(error => {
+      console.error('Erro:', error);
+    });
   },[])
 
   const handleRequestSort = (
     event: React.MouseEvent<unknown>,
-    property: keyof FilteredTransactionModel,
+    property: keyof NotaFiscal,
   ) => {
     const isAsc = orderBy === property && order === 'asc';
     setOrder(isAsc ? 'desc' : 'asc');
@@ -115,12 +112,11 @@ export default function TransactionDataTable() {
     page > 0 ? Math.max(0, (1 + page) * rowsPerPage - rows.length) : 0;
 
   return (
-    <Box sx={{ width: '100%' }} className='bg-transparent rounded-xl overflow-hidden'>
-      <Paper sx={{ width: '100%', mb: 2 }} className='rounded-2xl'>
-        {/* <EnhancedTableToolbar numSelected={selected.length}/> */}
+    <Box className='z-10 flex flex-col w-fit gap-[10px] bg-transparent rounded-xl overflow-y-scroll'>
+      
         <TableContainer>
           <Table
-            sx={{ minWidth: 750 }}
+            sx={{ minWidth: 250 }}
             aria-labelledby="tableTitle"
             className='bg-transparent'
           >
@@ -129,7 +125,7 @@ export default function TransactionDataTable() {
               orderBy={orderBy}
               onRequestSort={handleRequestSort}
             />
-            <TableBody>
+            <TableBody sx={{ display: 'flex', flexDirection: 'column', gap: 2, border: 'none' }} >
               {/* if you don't need to support IE11, you can replace the `stableSort` call with:
               rows.slice().sort(getComparator(order, orderBy)) */}
               {stableSort(rows, getComparator(order, orderBy))
@@ -140,31 +136,45 @@ export default function TransactionDataTable() {
                     <TableRow
                       role="checkbox"
                       tabIndex={-1}
-                      key={row.fornecedor}
-                      className='bg-transparent odd:bg-slate-100/40 hover:bg-blue-200'
+                      key={row.id}
+                      sx={{ display: 'flex', flexDirection: 'column', alignItems: 'start', border: 'hidden', borderRadius: 4, backdropFilter: 'blur(16px)' }}
+                      className='flex flex-col justify-start content-start items-start max-sm:w-[400px] md:w-full bg-gradient-to-b from-white/40 to-slate-300/30 shadow-xl overflow-hidden text-start '
                     >
-                      
-                      <TableCell
-                        component="th"
-                        id={row.id.toString()}
-                        scope="row"
-                        padding="normal"
-                      >
-                        {row.id}
+                      <Box className='flex justify-between w-full'>
+
+                        <TableCell component="th" id={row.id.toString()} scope="row" sx={{ height: 50, border: 'none', fontSize: 18, fontWeight: 800, color: 'white' }} className='flex content-center py-[0px] bg-gradient-to-b from-emerald-300 to-emerald-700 rounded-br-2xl'>
+                          {row.id}
+                        </TableCell>
+
+
+                        <TableCell align="left" sx={{ height: 50, width: 190, border: 'none', fontSize: 18, fontWeight: 800, color: 'white' }} className='bg-gradient-to-b from-emerald-300 to-emerald-700 rounded-bl-2xl'>
+                          R$ <NumericFormat value={row.valor} displayType={'text'} thousandSeparator={'.'} decimalSeparator={','} decimalScale={2} fixedDecimalScale={true} />
+                        </TableCell>
+
+                      </Box>
+
+                      <TableCell align="left" sx={{ border: 'none', fontWeight: 700 }} >
+                        {row.nomeFornecedor}
                       </TableCell>
-                      <TableCell align="left" padding='normal' className='w-[120px]'>{row.data}</TableCell>
-                      <TableCell align="left" padding='normal' className='w-[420px]'>{row.fornecedor}</TableCell>
-                      <TableCell align="left" padding='normal' className='w-[170px]'>{row.cnpj}</TableCell>
-                      <TableCell align="left" className='w-[160px]'>{row.municipio}</TableCell>
-                      <TableCell align="left" padding='normal' className='w-[160px]'>R$ {formatNumber(row.valor, "pt-BR")}</TableCell>
+
+                      <Box className='flex justify-around w-full'>
+                        <TableCell align="left" sx={{ border: 'none' }}>
+                          <ListItemText primary='CNPJ: ' secondary={row.cnpjFornecedor} sx={{ display: 'flex', alignItems: 'center', gap: 1 }} />
+                        </TableCell>
+                        <TableCell align="left" sx={{ border: 'none' }} >
+                          <ListItemText primary='Data: ' secondary={row.dataEmissao} sx={{ display: 'flex', alignItems: 'center', gap: 1 }} />
+                        </TableCell>
+                      </Box>
+
+
                     </TableRow>
                   );
                 })}
               {emptyRows > 0 && (
                 <TableRow
-                  style={{
-                    height: (53) * emptyRows,
-                  }}
+                style={{
+                  height: (53) * emptyRows,
+                }}
                 >
                   <TableCell colSpan={6} />
                 </TableRow>
@@ -173,16 +183,16 @@ export default function TransactionDataTable() {
           </Table>
         </TableContainer>
         <TablePagination
-          rowsPerPageOptions={[5]}
+          rowsPerPageOptions={[4]}
           component="div"
           count={rows.length}
           rowsPerPage={5}
           page={page}
           onPageChange={handleChangePage}
           onRowsPerPageChange={handleChangeRowsPerPage}
-          className='bg-white/50'
+          className='bg-white/50 pt-[20px] rounded-xl'
         />
-      </Paper>
+
     </Box>
   );
 }
