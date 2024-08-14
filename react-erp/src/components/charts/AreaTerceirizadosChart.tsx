@@ -1,36 +1,69 @@
-import React from 'react';
-import { BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid, ResponsiveContainer } from 'recharts';
-import  { ufbaData } from '../../data/ufbaData';
-import ChartCard from '../ChartCard';
+// import * as React from 'react';
+// import { BarChart, BarChartProps } from '@mui/x-charts/BarChart';
+// import { axisClasses } from '@mui/x-charts/ChartsAxis';
+// import ChartCard from '../ChartCard';
 
-const data = [
-  { name: 'Serv. Admin.', Permanent: ufbaData.Pessoal.Terceirizados['Serviços administrativos continuados'] },
-  { name: 'Manut.', Permanent: ufbaData.Pessoal.Terceirizados['Manutenção predial e conservação de áreas verdes'] },
-  { name: 'Serv. Saúde', Permanent: ufbaData.Pessoal.Terceirizados['Serviços de saúde²'] },
-  { name: 'Serv. T.I.', Permanent: ufbaData.Pessoal.Terceirizados['Serviços de tecnologia de informação'] },
-];
+// export default function BorderRadius() {
+//   const [layout, setLayout] = React.useState<'horizontal' | 'vertical'>('vertical');
+//   const [radius, setRadius] = React.useState(10);
 
-const AreaTerceirizadosChart = () => {
-  return (
-    <ChartCard title='Divisão dos Terceirizados' className='md:w-[500px] max-h-[185px] gap-[2px]'>
+//   return (
+//     <ChartCard title='Pós-graduação' className='md:w-full h-[250px] gap-0'>
 
-      <ResponsiveContainer width="100%" height={130}>
+//       {/* <BarChart
+//         xAxis={[{ scaleType: 'band', data: ['Mest. Acad.', 'Mest. Prof.', 'Doutorado'] }]}
+//         series={419, 848, 3791}
+//         width={500}
+//         height={200}
+//         barLabel="value"
+//         borderRadius={30}
+//         colors={['#36A27B', '#FF6384', '#FFCE56']}
+//         className='rounded-xl'
+//       /> */}
+//     </ChartCard>
+//   );
+// }
 
-        <BarChart
-          data={data}
-          margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
-          >
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="name" />
-          <YAxis />
-          <Tooltip />
-          <Bar dataKey="Permanent" fill="#8884d8" />
-        </BarChart>
+// const dataset = [
+//   [3419, 0, 'Mest. Acad.'],
+//   [848, 0, 'Mest. Prof.'],
+//   [3.791, 0, 'Doutorado'],
+//   [9, 6, 'Fourth'],
+// ].map(([high, low, order]) => ({
+//   high,
+//   low,
+//   order,
+// }));
+// const chartSettingsH: Partial<BarChartProps> = {
+//   dataset,
+//   height: 300,
+//   yAxis: [{ scaleType: 'band', dataKey: 'order' }],
+//   sx: {
+//     [`& .${axisClasses.directionY} .${axisClasses.label}`]: {
+//       transform: 'translateX(-10px)',
+//     },
+//   },
+//   slotProps: {
+//     legend: {
+//       direction: 'row',
+//       position: { vertical: 'bottom', horizontal: 'middle' },
+//       padding: -5,
+//     },
+//   },
+// };
+// const chartSettingsV: Partial<BarChartProps> = {
+//   ...chartSettingsH,
+//   xAxis: [{ scaleType: 'band', dataKey: 'order' }],
+//   yAxis: undefined,
+// };
 
-      </ResponsiveContainer>
-      
-    </ChartCard>
-  );
-}
-
-export default AreaTerceirizadosChart;
+// const colors = [
+//   '#36A27B',
+//   '#FF6384',
+//   '#FFCE56',
+//   '#FF5733',
+//   '#C70039',
+//   '#900C3F',
+//   '#581845',
+//   '#DAa706',
+// ];

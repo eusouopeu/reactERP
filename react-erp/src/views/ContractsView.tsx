@@ -1,13 +1,12 @@
-import React from 'react'
-import ContractsList from '../components/lists/ContractsList'
 import DREList from '../components/lists/DREList'
+import ContractsTable from '../containers/ContractsTable'
 
 
 export default function ContractsView() {
   return (
     <section className='views'>
 
-      <ContractsList/>
+      <ContractsTable/>
       
       <DREList />
       

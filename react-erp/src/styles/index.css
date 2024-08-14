@@ -11,6 +11,7 @@
   font-family: 'Nunito';
   scrollbar-width: thin;
   scrollbar-color: #047857 transparent;
+  background-color: transparent;
 }
 
 :root {
@@ -78,21 +79,6 @@ body {
   .tabs {
     @apply hidden;
   }
-  .views {
-    @apply flex max-sm:flex-col-reverse max-sm:items-center justify-between w-full content-start px-[20px] max-sm:pb-[90px] gap-[20px] overflow-scroll;
-  }
-  .summary-container {
-    @apply flex flex-col md:justify-between max-sm:w-full lg:w-[400px] gap-[20px];
-  }
-  .charts-container {
-    @apply flex flex-col w-full gap-[20px];
-  }
-  .summary-card {
-    @apply flex flex-col items-start  w-full p-[20px] bg-gradient-to-b from-white/40 to-slate-200/30 backdrop-blur-sm rounded-xl shadow-lg;
-  }
-  .chart-card {
-    @apply flex flex-col max-sm:w-full h-fit p-[16px] gap-[12px] bg-gradient-to-bl from-white/40 to-slate-200/30 backdrop-blur-sm rounded-xl shadow-lg;
-  }
 }
 
 @layer components {
@@ -110,8 +96,56 @@ body {
   .searchbar {
     @apply hidden md:flex w-full py-1 px-2 bg-gradient-to-b from-white to-slate-100 rounded-full;
   }
+  .views {
+    @apply flex max-sm:flex-col-reverse max-sm:items-center justify-between w-full content-start px-[20px] max-sm:pb-[90px] gap-[20px] overflow-scroll;
+  }
+  .summary-container {
+    @apply flex flex-col max-sm:w-full lg:w-[400px] gap-[16px];
+  }
+  .charts-container {
+    @apply flex flex-col w-full gap-[20px];
+  }
+  .summary-card {
+    @apply flex flex-col items-start w-full p-[20px] bg-gradient-to-b from-white/40 to-slate-200/30 backdrop-blur-sm rounded-xl shadow-lg;
+  }
+  .chart-card {
+    @apply flex flex-col max-sm:w-full h-fit p-[16px] gap-[12px] bg-gradient-to-bl from-white/40 to-slate-200/30 backdrop-blur-sm rounded-xl shadow-lg;
+  }
+  .data-table {
+    text-transform: capitalize;
+    @apply h-fit rounded-xl shadow-lg overflow-hidden;
 
+    * {
+      background-color: transparent;
+      border: #4ade80;
+      &hover {
+        background-color: transparent;
+      }
+    }
+
+    .ant-table {
+      background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(148, 163, 184, 0.4));
+      border-radius: 15;
+      overflow: hidden;
+    }
+  }
+  .tag-professor {
+    @apply bg-gradient-to-b from-green-500 to-green-600 rounded-full text-sm text-white font-bold;
+  }
+  .tag-ta {
+    @apply bg-gradient-to-b from-blue-500 to-blue-600 rounded-full text-sm text-white font-bold;
+  }
+  .tag-outros {
+    @apply bg-gradient-to-b from-rose-500 to-rose-600 rounded-full text-sm text-white font-bold;
+  }
+  .legend {
+    @apply flex flex-wrap items-center w-[100%] p-2 gap-2;
+    p {
+      @apply text-slate-700;
+    }
+  }
 }
+
 
 
 a {

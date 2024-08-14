@@ -8,8 +8,8 @@ import { BookOpenIcon, CreditCardIcon, CurrencyDollarIcon, GlobeAsiaAustraliaIco
 import TransactionsView from './views/TransactionsView'
 import ContractsView from './views/ContractsView'
 import TripsView from './views/TripsView'
-import CreditCardsView from './views/CreditCardsView'
-
+import CreditExtractView from './views/CreditExtractView'
+// 
 function App() {
   const [value, setValue] = useState(0)
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
@@ -143,7 +143,7 @@ function App() {
         {value === 2 && <ContractsView/>}
         {value === 3 && <StaffView/>}
         {value === 4 && <TripsView/>}
-        {value === 5 && <CreditCardsView/>}
+        {value === 5 && <CreditExtractView/>}
       </section>
     </>
   )

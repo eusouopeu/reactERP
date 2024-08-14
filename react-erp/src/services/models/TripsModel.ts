@@ -7,24 +7,13 @@ export interface TripModelHeader {
 
 export interface TripModel {
   id: number;
-  viagem: {
-    motivo: string;
-  }
-  situacao: string;
-  beneficiario: {
-    nome: string;
-    cpfFormatado: string;
-  };
-  cargo: {
-    descricao: string;
-  };
-  unidadeGestoraResponsavel: {
-    codigo: string;
-    nome: string;
-  };
-  dataInicioAfastamento: string;
-  dataFimAfastamento: string;
-  valorTotalDiarias: number;
-  valorTotalPassagens: number;
-  valorTotalViagem: number;
+  motivo: string;
+  beneficiario: string;
+  cargo: string;
+  unidade: string;
+  dataInicio: string;
+  dataFim: string;
+  valorDiarias: string;
+  valorPassagens: string;
+  valorTotal: string;
 }

@@ -149,9 +149,9 @@ export const bolsasUfba = {
     "PIBID": 383,
     "Residência Pedagógica (PRP)": 537,
     "PIBIC¹": 2391,
-    "PIBITI": 147,
-    "": 355,
+    "Extensão": 355,
     "Estágio não obrigatório²": 161,
+    "PIBITI": 147,
   },
   "PosGraduacao": {
     "CAPES": {

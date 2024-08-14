@@ -5,7 +5,7 @@ interface LineChartProps {
   className?: string
   children: React.ReactNode
 }
-export default function LineChart({ title, className, children }: LineChartProps) {
+export default function ChartCard({ title, className, children }: LineChartProps) {
   
   return (
     <div className={clsx('chart-card', className)}>

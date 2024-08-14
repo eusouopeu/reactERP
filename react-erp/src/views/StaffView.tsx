@@ -1,4 +1,4 @@
-import { StaffDataTable } from '../components/tables/StaffDataTable'
+import StaffTable from '../containers/StaffTable'
 import StaffSummary from '../containers/summaries/StaffSummary'
 
 export default function StaffView() {
@@ -6,7 +6,7 @@ export default function StaffView() {
     <section className='views'>
 
       <div className='flex flex-col w-[100%] md:h-[75%]'>
-        <StaffDataTable/>
+        <StaffTable/>
       </div>
 
       <StaffSummary/>

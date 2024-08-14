@@ -7,7 +7,7 @@ const formatNumber = (value: number) =>
 export default function DREList() {
 
   return (
-    <section>
+    <section className='w-[35%]'>
       <h2 className='text-start font-bold text-white'>
         Demonstração de Resultados do Exercício
       </h2>

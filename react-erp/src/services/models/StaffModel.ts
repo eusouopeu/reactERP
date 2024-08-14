@@ -1,17 +1,17 @@
 export interface StaffModelHeader {
-  id: keyof FilteredStaffModel
+  id: keyof StaffModel
   numeric: boolean
   disablePadding: boolean
   label: string
 }
 
-export interface FilteredStaffModel {
+export interface StaffModel {
   id: number;
   nome: string;
   unidade: string;
   cargo: string;
   admissao: string | number;
-  salario: number;
+  salario: string;
 }
 
 export interface RawStaffModel {

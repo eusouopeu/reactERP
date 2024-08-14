@@ -1,5 +1,6 @@
 import React from 'react';
 import { AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
+import ChartCard from '../../ChartCard';
 
 const grad = [
   { name: '2006', value: 22665 },
@@ -12,11 +13,13 @@ const grad = [
 
 const MyLineChart = () => {
   return (
-    <ResponsiveContainer width="100%" height={280}>
+    <ChartCard title='Número de alunos'>
+
+    <ResponsiveContainer width="100%" height={200}>
       <AreaChart
         data={grad}
         margin={{ top: 10, right: 30, left: 0, bottom: 0 }}
-      >
+        >
         <defs>
           <linearGradient id="colorValue" x1="1" y1="0" x2="0" y2="1">
             <stop offset="30%" stopColor="#1994ff" stopOpacity={0.5}/>
@@ -29,6 +32,7 @@ const MyLineChart = () => {
         <Area type="monotone" dataKey="value" stroke="#1994ff" fillOpacity={1} fill="url(#colorValue)" />
       </AreaChart>
     </ResponsiveContainer>
+        </ChartCard>
   );
 }
 

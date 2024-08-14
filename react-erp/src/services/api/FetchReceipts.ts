@@ -1,53 +1,50 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import axios, { AxiosResponse } from 'axios';
+import { ReceiptModel } from '../models/ReceiptsModel';
 
-export interface NotaFiscal {
-  id: number;
-  nomeFornecedor: string;
-  cnpjFornecedor: string;
-  municipioFornecedor: string;
-  dataEmissao: string;
-  valor: string;
-}
 
-export const fetchNotasFiscais = async (): Promise<NotaFiscal[]> => {
+export const fetchReceipts = (): Promise<ReceiptModel[]> => {
   const url = 'https://api.portaldatransparencia.gov.br/api-de-dados/notas-fiscais';
   const headers = {
     'Accept': '*/*',
     'chave-api-dados': '707532d2cd4eef27fdd5160dcef56995',
   };
 
-  let allNotasFiscais: NotaFiscal[] = [];
+  let allReceipts: ReceiptModel[] = [];
+  const promises: Promise<void>[] = [];
 
   for (let pagina = 1; pagina <= 3; pagina++) {
-    try {
-      const params = {
-        codigoOrgao: '26232',
-        pagina: String(pagina),
-      };
+    const params = {
+      codigoOrgao: '26232',
+      pagina: Number(pagina),
+    };
 
-      const response: AxiosResponse<any[]> = await axios.get(url, {
-        params,
-        headers,
+    const promise = axios.get(url, { params, headers })
+      .then((response: AxiosResponse<any[]>) => {
+        // Filtra os dados para retornar apenas os campos desejados
+        const receipt = response.data.map((nota: any) => ({
+          id: nota.id,
+          fornecedor: nota.nomeFornecedor.toLowerCase(),
+          cnpj: nota.cnpjFornecedor,
+          municipio: nota.municipioFornecedor.toLowerCase(),
+          data: nota.dataEmissao,
+          valor: `R$ ${nota.valorNotaFiscal}`,
+        }));
+
+        allReceipts = [...allReceipts, ...receipt];
+      })
+      .catch(error => {
+        console.error(`Erro ao buscar notas fiscais na página ${pagina}:`, error);
+        throw error;
       });
 
-      // Filtra os dados para retornar apenas os campos desejados
-      const notasFiscais = response.data.map((nota: any) => ({
-        id: nota.id,
-        nomeFornecedor: nota.nomeFornecedor,
-        cnpjFornecedor: nota.cnpjFornecedor,
-        municipioFornecedor: nota.municipioFornecedor,
-        dataEmissao: nota.dataEmissao,
-        valor: nota.valorNotaFiscal,
-      }));
-
-      allNotasFiscais = [...allNotasFiscais, ...notasFiscais];
-    } catch (error) {
-      console.error(`Erro ao buscar notas fiscais na página ${pagina}:`, error);
-      throw error;
-    }
+    promises.push(promise);
   }
 
-  return allNotasFiscais;
+  return Promise.all(promises)
+    .then(() => allReceipts)
+    .catch(error => {
+      console.error('Erro ao processar todas as requisições:', error);
+      throw error;
+    });
 };
-

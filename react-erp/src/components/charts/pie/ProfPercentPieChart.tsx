@@ -14,7 +14,7 @@ const bolsasGraduacao = {
   "PIBITI": 147,
 };
 
-const BolsasPieChart = () => {
+const ProfPie = () => {
   const data = Object.entries(bolsasGraduacao).map(([name, value]) => ({
     value,
     name: name || 'Sem nome', // Handle empty names
@@ -33,10 +33,12 @@ const BolsasPieChart = () => {
   ];
 
   return (
-    <ChartCard title='Bolsas de Graduação' className='flex flex-col justify-between md:w-[350px] h-full gap-0'>
+    <ChartCard title='Bolsas de Graduação' className='flex flex-col justify-between md:w-[350px] h-[790px] gap-0'>
       <PieChart
+        className='self-start h-full p-[0px] m-[0xp]'
         width={400}
-        height={340}
+        height={290}
+        margin={{ right:100 }}
         colors={colors}
         
         series={[
@@ -77,7 +79,7 @@ const BolsasPieChart = () => {
               <p>Extensão</p>
             </div>
             <div className='flex gap-1'>
-            <PieChartFilled className='text-xl text-[#900C3F]'/>
+              <PieChartFilled className='text-xl text-[#900C3F]'/>
               <p>Estágio não obrigatório²</p>
             </div>
             <div className='flex gap-1'>
@@ -96,4 +98,4 @@ const BolsasPieChart = () => {
   );
 };
 
-export default BolsasPieChart;
+export default ProfPie;

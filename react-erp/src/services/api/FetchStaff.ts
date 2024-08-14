@@ -1,90 +1,111 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import axios, { AxiosResponse } from 'axios';
-import { ServidoresResponse } from '../models/ServidorModel';
+import axios, { AxiosResponse } from 'axios'
 
+export interface Servidor {
+  id: number
+  lotacao: string
+  exercicio: string
+  cargo: string
+  admissao: string
+  nome: string
+}
 
-//= FETCH SERVIDORES
-export const fetchServidores = (): Promise<ServidoresResponse[]> => {
-  const url = 'https://api.portaldatransparencia.gov.br/api-de-dados/servidores';
-  const params = {
-    orgaoServidorExercicio: '26232',
-    pagina: '1'
-  };
+export interface ServidoresResponse {
+  servidor: Servidor
+  // Adicione outros campos se necessário
+}
 
-  return axios.get<ServidoresResponse[]>(url, {
-    params: params,
-    headers: {
-      'Accept': '*/*',
-      'chave-api-dados': '707532d2cd4eef27fdd5160dcef56995',
-    },
-  })
-    .then((response: AxiosResponse<ServidoresResponse[]>) => response.data)
-    .catch((error) => {
-      console.error('Error fetching servidores:', error);
-      throw error; // Propague o erro para que o chamador possa lidar com ele
-    });
-};
+export interface RemuneracaoResponse {
+  id: number
+  nome: string
+  salarioBruto: number
+  auxilios: number
+  outrasRemuneracoes: number
+  previdenciaOficial: number
+  IRRF: number
+  // Adicione outros campos se necessário
+}
 
+export const fetchServidoresComRemuneracao = (): Promise<any[]> => {
+  const urlServidores = 'https://api.portaldatransparencia.gov.br/api-de-dados/servidores'
+  const urlRemuneracao = 'https://api.portaldatransparencia.gov.br/api-de-dados/servidores/remuneracao'
+  const headers = {
+    'Accept': '*/*',
+    'chave-api-dados': '707532d2cd4eef27fdd5160dcef56995',
+  }
 
-//= FETCH REMUNERAÇÂO
-const fetchRemuneracao = (idServidorPensionista: number): Promise<string[]> => {
-  const url = `https://api.portaldatransparencia.gov.br/api-de-dados/servidores/remuneracao`;
-  const params = {
-    id: idServidorPensionista,
-    mesAno: '202403',
-    pagina: '1'
-  };
+  const allServidores: ServidoresResponse[] = []
+  const promises: Promise<void>[] = []
+  let allStaff: any[] = []
+  let allStaffIncome: any[] = []
 
-  return axios.get<string[]>(url, {
-    params: params,
-    headers: {
-      'Accept': '*/*',
-      'chave-api-dados': '707532d2cd4eef27fdd5160dcef56995',
-    },
-  })
-    .then((response: AxiosResponse<any>) => response.data[0].remuneracoesDTO[0].rubricas[0].valor)
-    .catch((error) => {
-      console.error('Error fetching remuneracao data:', error);
-      throw error;
-    });
-};
+  for (let pagina = 1; pagina <= 5; pagina++) {
+    const paramsServidores = {
+      orgaoServidorExercicio: '26232',
+      pagina: String(pagina),
+    }
 
-// Função principal para buscar e combinar dados
-export const getServidoresComRemuneracao = (): Promise<any[]> => {
-  return fetchServidores()
-    .then((servidores: any[]) => {
-      const promises = servidores.map((item: { servidor: any; }) => {
-        const servidor = item.servidor;
-
-        return fetchRemuneracao(servidor.idServidorAposentadoPensionista)
-          .then((remuneracoes: string[]) => {
-            if (remuneracoes.length > 0) {
-              const remuneracaoBasicaBruta = remuneracoes[0];
-              return {
-                id: servidor.idServidorAposentadoPensionista,
-                nome: servidor.pessoa.nome,
-                cargo: servidor.funcao.descricaoFuncaoCargo,
-                admissao: servidor.fichasCargoEfetivo?.dataIngressoOrgao || 'Não disponível',
-                unidade: servidor.fichasCargoEfetivo?.uorgLotacao || 'Não disponível',
-                salario: remuneracaoBasicaBruta
-              };
-            } else {
-              return {
-                idServidorPensionista: servidor.idServidorAposentadoPensionista,
-                nome: servidor.pessoa.nome,
-                cargo: servidor.funcao.descricaoFuncaoCargo,
-                admissao: servidor.fichasCargoEfetivo?.dataIngressoOrgao || 'Não disponível',
-                unidade: servidor.fichasCargoEfetivo?.uorgLotacao || 'Não disponível',
-                salario: 'Não disponível'
-              };
-            }
-          });
-      });
-
-      return Promise.all(promises);
+    const promise = axios.get<ServidoresResponse[]>(urlServidores, {
+      params: paramsServidores,
+      headers: headers,
     })
-    .catch((error: any) => {
-      console.error('Error combining data for all servidores:', error);
-      throw error;
-    });
-};
+    .then((response: AxiosResponse<any[]>) => {
+      const staff = response.data.map((servidor: any) => ({
+        id: servidor.id,
+        nome: servidor.fichasCargoEfetivo[0].nome,
+        lotacao: servidor.fichasCargoEfetivo[0].uorgLotacao,
+        exercicio: servidor.fichasCargoEfetivo[0].uorgExercicio,
+        cargo: servidor.fichasCargoEfetivo[0].cargo,
+        admissao: servidor.fichasCargoEfetivo[0].dataIngressoCargo,
+      }))
+      
+      allStaff = [...allStaff, ...staff]
+    })
+    .catch((error) => {
+      console.error(`Error fetching servidores on page ${pagina}:`, error)
+      throw error
+    })
+    
+    promises.push(promise)
+  }
+  
+  return Promise.all(promises)
+  .then(() => {
+    // Depois de obter todos os servidores, faz a segunda requisição para obter as remunerações
+    const remuneracaoPromises = allServidores.map((servidorResponse) => {
+      const idServidorPensionista = servidorResponse.servidor.id
+      
+      const paramsRemuneracao = {
+        idServidorPensionista: idServidorPensionista,
+        mesAno: '202405',
+        pagina: 1,
+      }
+      
+      return axios.get<any[]>(urlRemuneracao, {
+        params: paramsRemuneracao,
+        headers: headers,
+      })
+      .then((remuneracaoResponse: AxiosResponse<any[]>) => {
+        const staffIncome = remuneracaoResponse.data.map((servidor: any) => ({
+          id: servidor.idServidorPensionista,
+          nome: servidor.pessoa.nome,
+          salarioBruto: servidor.remuneracoesDTO[0].rubricas[0].valor,
+          auxilios: servidor.remuneracoesDTO[0].rubricas[1].valor,
+          outrasRemuneracoes: servidor.remuneracoesDTO[0].rubricas[2].valor,
+          previdenciaOficial: servidor.remuneracoesDTO[0].rubricas[3].valor,
+          IRRF: servidor.remuneracoesDTO[0].rubricas[4].valor,
+        }))
+        
+        allStaffIncome = [...allStaffIncome, ...staffIncome]
+
+        return allStaffIncome
+      })
+    })
+
+      return Promise.all(remuneracaoPromises)
+    })
+    .catch((error) => {
+      console.error('Error fetching servidores com remuneração:', error)
+      throw error
+    })
+}

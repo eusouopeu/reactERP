@@ -1,57 +1,39 @@
-import React from 'react'
-import { fetchNotasFiscais, NotaFiscal } from '../../../services/api/FetchReceipts'
-import { PieChart } from '@mui/x-charts';
-import ChartCard from '../../ChartCard';
+// import React, { useEffect, useState } from 'react'
+// import { fetchReceipts } from '../../../services/api/FetchReceipts'
+// import { BarChart } from '@mui/x-charts';
+// import ChartCard from '../../ChartCard';
+// import { ReceiptModel } from '../../../services/models/ReceiptsModel';
 
 
-export default function CountyPieChart() {
-  const [data, setData] = React.useState<NotaFiscal[]>([]);
+// export default function CountyPieChart() {
+//   const [receipts, setReceipts] = useState<ReceiptModel[]>([]);
 
-  React.useEffect(() => {
-    fetchNotasFiscais()
-    .then(notas => {
-      setData(notas)
-    })
-    .catch(error => {
-      console.error('Erro:', error);
-    });
-  },[])
+//   useEffect(() => {
+//     fetchReceipts().then((receipt) => {
+//       setReceipts(receipt);
+//     });
+//   }, []);
 
-  const finalData = data.map((nota) => ({
-    value: parseFloat(nota.valor),
-    name: nota.municipioFornecedor,
-  })) 
+// const data = receipts.map((transaction) => ({
+//     x: transaction.fornecedor,
+//     y: parseFloat(transaction.valor),
+//   }));
 
-  return (
-    <ChartCard title='Municípios' className='h-[260px]'>
-
-      <PieChart
-        height={160}
-        margin={{ right:100 }}
-        series={[
-          {
-            data: finalData,
-            innerRadius: 48,
-            outerRadius: 100,
-            paddingAngle: 4,
-            cornerRadius: 8,
-            startAngle: -90,
-            endAngle: 180,
-            cx: 150,
-            cy: 80,
-            highlightScope: { faded: 'global', highlighted: 'item' },
-            faded: { innerRadius: 30, additionalRadius: -20, color: 'green' },
-          }
-        ]}
-        slotProps={{
-          legend: {
-            direction: 'column',
-            position: { vertical: 'middle', horizontal: 'right' },
-            padding: 0,
-          },
-        }}
-      />
-
-    </ChartCard>
-  )
-}
+//   return (
+//     <ChartCard title="Valor das Notas Fiscais por Fornecedor">
+//       <BarChart
+//         width={600}
+//         height={400}
+//         series={[
+//           {
+//             label: 'Valor da Nota Fiscal (R$)',
+//             data: data,
+//           }
+//         ]}
+//         xAxis={[{ field: 'label', label: 'Fornecedor' }]}
+//         yAxis={{ label: 'Valor da Nota Fiscal (R$)' }}
+//         colors={['#36A2EB']}
+//       />
+//     </ChartCard>
+//   );
+// }

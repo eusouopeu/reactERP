@@ -1,9 +1,9 @@
 import React from 'react'
 import ChartCard from '../../ChartCard'
 
-export default function IncomesBarChart() {
+export default function ReceiptValueBarChart() {
   return (
-    <ChartCard title='Distribuição de salários'>
+    <ChartCard title='Distribuição de valores de despesa'>
       Bar chart
     </ChartCard>
   )

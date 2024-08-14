@@ -1,24 +1,20 @@
 import React from 'react'
-import AreaTerceirizadosChart from '../components/charts/AreaTerceirizadosChart'
-import FormDocentesChart from '../components/charts/formDocentesChart'
 import GradPieChart from '../components/charts/pie/GradPieChart'
+import DebtsLineChart from '../components/charts/line/DebtsLineChart'
+import TurnoAlunosPieChart from '../components/charts/pie/TurnoAlunosPieChart'
 
 export default function DashChartsContainer() {
   return (
     <section className='charts-container'>
-
-{/* <ChartCard title='Evolução matrículas (2006 a 2015)' className='p-[24px]'>
-        <CustomLineChart/>
-      </ChartCard> */}
         
+        <div className='flex gap-4'>
           <GradPieChart/>
-        <div className='flex flex-col gap-[20px]'>
-          
-            <AreaTerceirizadosChart/>
-
-          
-            <FormDocentesChart/>
+          <div className='flex flex-col gap-4'>
+            <TurnoAlunosPieChart/>
+            <DebtsLineChart/>
+          </div>
         </div>
+        
 
       </section>
   )
