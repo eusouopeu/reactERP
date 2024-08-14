@@ -1,4 +1,4 @@
-import React from 'react'
+
 import CreditExtractTable from '../containers/CreditExtractTable'
 import CreditSummary from '../containers/summaries/CreditSummary'
 

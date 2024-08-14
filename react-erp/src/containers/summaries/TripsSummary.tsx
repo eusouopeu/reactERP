@@ -1,5 +1,5 @@
 
-import React from 'react'
+
 import SummaryCards from '../../components/SummaryCards'
 export default function TripsSummary() {
   return (

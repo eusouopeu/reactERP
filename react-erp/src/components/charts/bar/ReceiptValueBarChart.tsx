@@ -1,4 +1,4 @@
-import React from 'react'
+
 import ChartCard from '../../ChartCard'
 
 export default function ReceiptValueBarChart() {

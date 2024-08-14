@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { PieChart } from '@mui/x-charts/PieChart';
 import ChartCard from '../../ChartCard';
 import { PieChartFilled } from '@ant-design/icons';

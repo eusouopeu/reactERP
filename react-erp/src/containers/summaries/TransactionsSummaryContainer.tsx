@@ -1,12 +1,11 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { formatNumber } from 'chart.js/helpers'
-import React from 'react'
+
 // import CountyPieChart from '../../components/charts/pie/CountyPieChart'
 import SummaryCards from '../../components/SummaryCards'
-import { totalGastos, mediaGastos, maiorGasto, municipioModa } from '../../services/utils/TransactionsComparison'
+import { mediaGastos, maiorGasto } from '../../services/utils/TransactionsComparison'
 
 export default function TransactionsSummaryContainer() {
-  const municipio = municipioModa?.municipio != undefined ? municipioModa.municipio : 'Não informado'
   const maiorValor = maiorGasto?.valor != undefined ? maiorGasto.valor : 0
    
   

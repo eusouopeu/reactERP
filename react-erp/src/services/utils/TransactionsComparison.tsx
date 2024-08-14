@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
+
 // Importando os dados da equipe
 import { transactionsData } from '../../data/transactionsData';
 

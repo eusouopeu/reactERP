@@ -1,4 +1,4 @@
-import React from 'react'
+
 import TripsSummary from '../containers/summaries/TripsSummary'
 import TripsTable from '../containers/TripsTable'
 

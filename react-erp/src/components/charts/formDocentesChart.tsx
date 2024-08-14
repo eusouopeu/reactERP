@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid, ResponsiveContainer } from 'recharts';
 import { ufbaData } from '../../data/ufbaData';
 import ChartCard from '../ChartCard';

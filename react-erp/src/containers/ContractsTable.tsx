@@ -100,8 +100,7 @@ export default function ContractsTable() {
       <SearchOutlined style={{ color: filtered ? '#1677ff' : undefined }} />
     ),
     onFilter: (value, record) =>
-      record[dataIndex]
-        .toString()
+      record[dataIndex]!.toString()
         .toLowerCase()
         .includes((value as string).toLowerCase()),
     onFilterDropdownOpenChange: (visible: boolean) => {

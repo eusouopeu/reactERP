@@ -1,4 +1,3 @@
-import React from 'react'
 import { formatNumber } from 'chart.js/helpers'
 import SummaryCards from '../../components/SummaryCards'
 import { ufbaData } from '../../data/ufbaData';

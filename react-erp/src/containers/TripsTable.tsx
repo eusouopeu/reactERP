@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Space, Button, Table, TableProps, InputRef, Input, TableColumnType, TableColumnsType, ConfigProvider, Tag } from 'antd'
 import { fetchTrips } from '../services/api/FetchTrips'
 import { TripModel } from '../services/models/TripsModel'

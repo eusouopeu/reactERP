@@ -1,4 +1,4 @@
-import React from 'react'
+
 import DashSummaryContainer from '../containers/summaries/DashboardSummary'
 import DashChartsContainer from '../containers/DashChartsContainer'
 // import TripsList from '../components/tables/TripsList'

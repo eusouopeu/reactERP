@@ -1,4 +1,4 @@
-import React from 'react'
+
 import GradPieChart from '../components/charts/pie/GradPieChart'
 import DebtsLineChart from '../components/charts/line/DebtsLineChart'
 import TurnoAlunosPieChart from '../components/charts/pie/TurnoAlunosPieChart'
