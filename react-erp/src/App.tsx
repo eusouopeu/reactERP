@@ -12,8 +12,9 @@ import CreditExtractView from './views/CreditExtractView'
 // 
 function App() {
   const [value, setValue] = useState(0)
-  const handleChange = (newValue: number) => {
+  const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue)
+    console.log(event)
   }
   
 
