@@ -1,4 +1,9 @@
-import { TransactionModelHeader } from "../services/models/TransactionModel";
+export interface TransactionModelHeader {
+  id: string;
+  numeric: boolean;
+  disablePadding: boolean;
+  label: string;
+}
 
 //= Header
 export const transactionsHeader: readonly TransactionModelHeader[] = [

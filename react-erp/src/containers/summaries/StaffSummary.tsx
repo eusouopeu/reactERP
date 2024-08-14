@@ -1,14 +1,11 @@
-import { formatNumber } from 'chart.js/helpers'
-
 import SummaryCards from '../../components/SummaryCards'
-import { mediaSalProfs, mediaSalTAs } from '../../services/utils/StaffComparisons'
 
 
 export default function StaffSummary() {
   return (
     <section className='summary-container'>
-        <SummaryCards title='Média profs.' value={`R$ ${formatNumber(mediaSalProfs, 'pt-BR')}`} />
-        <SummaryCards title='Média TAs' value={`R$ ${formatNumber(mediaSalTAs, 'pt-BR')}`} />
+        <SummaryCards title='Média profs.' value={`R$ 13.453,56`} />
+        <SummaryCards title='Média TAs' value={`R$ 3.054,40`} />
       </section>
   )
 }
