@@ -1,0 +1,13 @@
+{
+	"editor.formatOnSave": true,
+	"notebook.formatOnSave.enabled": true,
+	"editor.formatOnType": true,
+	"editor.formatOnPaste": true,
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"notebook.defaultFormatter": "esbenp.prettier-vscode",
+	"markdown.updateLinksOnFileMove.enabled": "always",
+	"typescript.updateImportsOnFileMove.enabled": "always",
+	"typescript.experimental.updateImportsOnPaste": true,
+	"javascript.updateImportsOnFileMove.enabled": "always",
+	"javascript.experimental.updateImportsOnPaste": true
+}

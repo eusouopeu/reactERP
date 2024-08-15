@@ -35,8 +35,8 @@ body {
   margin: 0;
   display: flex;
   place-items: center;
-  min-width: 320px;
-  min-height: 100vh; 
+  min-width: 320px; 
+  height: 100vh;
 }
 
 @layer base {
@@ -73,8 +73,11 @@ body {
     padding: 0 4px; /* Remove o padding se necessário */
     margin: 0; /* Remove a margem se necessário */
   }
+  .ant-collapse-item {
+    @apply bg-gradient-to-b from-emerald-400 to-emerald-600 backdrop-blur-sm rounded-xl shadow-lg;
+  }
   .main {
-    @apply z-10 absolute top-[20px] flex justify-start h-screen w-full md:w-[calc(100vw-40px)] pb-[80px] md:pb-[0px] md:pl-[280px] overflow-hidden;
+    @apply z-10 absolute top-[20px] flex justify-start h-[96vh] w-full md:w-[calc(100vw-20px)] pb-[80px] md:pb-[0px] md:pl-[280px] overflow-hidden;
   }
   .tabs {
     @apply hidden;
@@ -113,11 +116,10 @@ body {
   }
   .data-table {
     text-transform: capitalize;
-    @apply h-fit rounded-xl shadow-lg overflow-hidden;
+    @apply h-fit rounded-lg shadow-lg overflow-hidden;
 
     * {
       background-color: transparent;
-      border: #4ade80;
       &hover {
         background-color: transparent;
       }
@@ -127,6 +129,17 @@ body {
       background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(148, 163, 184, 0.4));
       border-radius: 15;
       overflow: hidden;
+    }
+
+    .ant-table-column-title {
+      @apply font-extrabold;
+    }
+  }
+  .collapsable {
+    @apply flex flex-col w-[100%] h-fit rounded-lg overflow-hidden *:bg-gradient-to-b *:from-blue-400 *:to-blue-600 border-hidden mb-4 text-start;
+
+    .ant-list-item {
+      @apply flex flex-col items-start gap-1;
     }
   }
   .tag-professor {

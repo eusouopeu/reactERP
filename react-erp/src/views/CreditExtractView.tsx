@@ -1,5 +1,5 @@
 
-import CreditExtractTable from '../containers/CreditExtractTable'
+import CreditExtractTable from '../components/tables/CreditExtractTable'
 import CreditSummary from '../containers/summaries/CreditSummary'
 
 export default function CreditExtractView() {

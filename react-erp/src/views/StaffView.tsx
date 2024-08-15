@@ -1,4 +1,4 @@
-import StaffTable from '../containers/StaffTable'
+import StaffTable from '../components/tables/StaffTable'
 import StaffSummary from '../containers/summaries/StaffSummary'
 
 export default function StaffView() {

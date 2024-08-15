@@ -1,5 +1,5 @@
 import TransactionsSummaryContainer from '../containers/summaries/TransactionsSummaryContainer'
-import ReceiptsTable from '../containers/ReceiptsTable'
+import ReceiptsTable from '../components/tables/ReceiptsTable'
 
 export default function TransactionsView() {
   

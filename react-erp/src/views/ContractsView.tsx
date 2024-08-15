@@ -1,14 +1,20 @@
-import DREList from '../components/lists/DREList'
-import ContractsTable from '../containers/ContractsTable'
+import DREAccordion from '../components/DREAccordion'
+import ContractsTable from '../components/tables/ContractsTable'
 
 
 export default function ContractsView() {
   return (
     <section className='views'>
 
-      <ContractsTable/>
+      <div className='absolute md:w-[51%]'>
+        <ContractsTable />
+      </div>
       
-      <DREList />
+      <div className='md:ml-[68%] w-fit'>
+        <DREAccordion />
+      </div>
+
+      {/* <CustomAccordion/> */}
       
     </section>
   )
