@@ -16,8 +16,8 @@ import {
 import { FilterDropdownProps } from 'antd/es/table/interface'
 import { SearchOutlined } from '@ant-design/icons'
 import Highlighter from 'react-highlight-words'
-import { StaffModel } from '../services/models/StaffModel'
-import { staffData } from '../data/staffData'
+import { StaffModel } from '../../models/StaffModel'
+import { staffData } from '../../data/staffData'
 
 type DataIndex = keyof StaffModel
 

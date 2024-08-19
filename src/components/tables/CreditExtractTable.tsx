@@ -12,8 +12,8 @@ import {
 	TableColumnsType,
 	ConfigProvider,
 } from 'antd'
-import { fetchCreditExtract } from '../services/api/FetchCreditExtract'
-import { CreditExtractModel } from '../services/models/CreditExtractModel'
+import { fetchCreditExtract } from '../../api/FetchCreditExtract'
+import { CreditExtractModel } from '../../models/CreditExtractModel'
 import { FilterDropdownProps } from 'antd/es/table/interface'
 import { SearchOutlined } from '@ant-design/icons'
 import Highlighter from 'react-highlight-words'
